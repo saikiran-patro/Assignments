@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <title>Assignment 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&amp;family=Concert+One&amp;family=Lobster&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ecf2ff;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0px;
+      }
+      .outputCode{
+        display: none;
+        transition: all 1s linear;
+      }
+      .section1Container , .section3Container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .section2Container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .section4Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .section1-left,.section2-left,.section3-left {
+        width: 50%;
+      }
+     .section1-right, .section2-right, .section3-right{
+        width:40%;
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #586f94;
+        font-weight: bold;
+        font-family: "Concert One", cursive;
+      }
+      p ,li{
+        font-size: 1.5rem;
+        line-height: 26px;
+        text-align: justify;
+      }
+      .navBar {
+        display: flex;
+        padding: 10px 0px;
+        justify-content: center;
+        align-items: center;
+        background-color: #3e54ac;
+      }
+
+      .navBar h1 {
+        font-size: 3rem;
+        color: #ecf2ff;
+        margin: 0px;
+        background-color: inherit;
+      }
+
+      .code{
+        background:black;
+        border-radius: 10px;;
+      }
+      pre{
+        background-color:black;
+        padding: 20px 10px;
+        border-radius: 10px;
+        margin: 0px;
+        color:white;
+        display: flex;
+      
+        align-items: center;
+      }
+      .runCode{
+        display: flex;
+    background: inherit;
+    padding: 10px;
+    border-radius: inherit;
+    justify-content: flex-end;
+      }
+      .runCode button{
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        background: #5F9DF7;
+        border-radius: 10px;
+        cursor:pointer;
+      }
+      li{
+        font-size:1.5rem;
+        line-height: 26px;
+        margin-bottom:5px;
+      }
+
+      .useCasesContainer{
+        width:100%;
+      }
+      .useCase{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+      }
+      .useCase .left{
+        width:50%;
+      }
+      .useCase .right{
+        width:40%;
+      }
+      .profilePic{
+        background-color: #C9D7DD;
+        border-radius: 100%;
+        height: 300px;
+        overflow: hidden;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+      }
+      .profilePic img{
+        height: 82%;
+        object-fit: cover;
+        width: 82%;
+        border-radius: 100%;
+        background: #C9D7DD;
+      }
+      .authorContainer{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
+      }
+      .authorContainer .left{
+        width: 50%;
+      }
+      .authorContainer .right{
+        width: 50%;
+        padding-left: 15%;
+      }
+      .socialIcons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 25px;
+      }
+      .socialIcons img{
+        width: 50px;
+      }
+      .autoType{
+        color: #395b64;
+        font-weight: bold;
+        font-size: 1.2rem;
+        
+      }
+      .authorContainer .right button{
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #586f94), color-stop(100%, #C9D7DD));
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 50px;
+    transition: all .5s ease-in-out;
+    transition: all 2s ease;
+    width: 300px;
+      }
+
+
+      /* mobile View */
+      @media (max-width:1000px) {
+        .section1-left,.section2-left,.section3-left {
+        width: 100%;
+      }
+     .section1-right, .section2-right, .section3-right{
+        width:100%;
+      }
+   pre{
+    overflow: scroll;
+   }
+      .useCase .left{
+        width:100%;
+
+      }
+      .authorContainer{
+        flex-wrap: wrap;
+      }
+      .useCase .right{
+        width:100%; 
+      }
+      .authorContainer .left{
+        width:100%;
+      }
+      .authorContainer .right{
+  
+        padding-left: 0px;
+        margin: 0px auto;
+      }
+      .authorContainer .right button{
+        width:fit-content;
+        padding 
+        :10px 20px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navBar">
+        <h1>Hyperlinks Magic</h1>
+      </nav>
+      <section class="historyContainer">
+        <div class="section1Container">
+          <div class="section1-left">
+            <h1>History of Web</h1>
+            <p>
+              The web has a great history and created a gigantic impact by
+              connecting , sharing resources over the internet. It was invented
+              by Tim Berners-Lee. The fundamental goal behind the WWW was to
+              create a robust and user-friendly worldwide information system by
+              combining and connecting webpages with the Hypertext protocols and
+              utilisng hyperlinks for connecting with different web pages over
+              the internet.
+            </p>
+            <h1>Hyperlinks</h1>
+            <p>
+              Hyperlinks are the most popular core functionality of web which
+              connects with other pages over the internet. A hyperlink,
+              sometimes called a link, is a feature on a web page that, with a
+              single click or touch, enables users to move to another resource
+              on the same website, another website, or inside the same web page.
+              Usually, hyperlinks are shown as text, photos, or other media
+              items that may be clicked. A hyperlink causes the associated
+              resource—which might be any kind of digital content—to load when a
+              user clicks on it. This resource could be another webpage, file,
+              picture, video, or anything else. This fluidity of resource
+              switching is what gives the web its immense strength and dynamic
+              nature.
+            </p>
+
+          </div>
+          <div class="section1-right">
+            <img src="./images/worldweb.png" style="width: 90%" alt="www" />
+          </div>
+        </div>
+      </section>
+      <section class="implementationContainer">
+         <div class="section2Container">
+             <div class="section2-left">
+
+                <h1>Implementation of Hyperlinks</h1>
+            <p>
+              Hyperlinks are implemented using
+              <span
+                >anchor tag<code><span> <</span>a<span>></span></code></span
+              >. This tag makes the content clickable and can redirect to
+              external pages or helps in internal routing. It requires certain
+              attributes to be functional and below are the major attributes
+              used with anchor tag.
+            </p>
+
+            <h1>Attibutes:</h1>
+            <div class="liContainer">
+              <ul>
+                <li>
+                  <span style="font-weight: bold;color:#FF731D;">href</span>: This attribute is mandatory to perform the
+                  action. This attribute will have a path to any external or
+                  internal resource. When the user clicks on this the routing is
+                  done to navigate to the link which is mentioned in this
+                  attribute.
+                </li>
+                <li>
+                    <span style="font-weight: bold;color:#FF731D;">target</span>: This attribute is optional but it is used to tell the browser to navigate the link to a new tab or same tab.
+
+                </li>
+                <li>
+                    <span style="font-weight: bold;color:#FF731D;">title</span>: This attribute is also optional and it is used to provide additional information as a tooltip.
+                </li>
+              </ul>
+            </div>
+             </div>
+             <div class="section2-right">
+                 <h1>Examples</h1>
+                  <div class="codeContainer">
+                     <p>A hyperlink with plain text.</p>
+                     <div class="code">
+                        <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                        </pre>
+                        <div class="runCode">
+                            <button onclick="showCode(0)">Run Code</button>
+                        </div>
+                            
+                     </div>
+                     <div class="outputCode">
+                        <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                        <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;">google.com</a>
+                     </div>
+                     <div class="codeContainer">
+                        <p>A hyperlink with target attribute which navigates to a new tab.</p>
+                        <div class="code">
+                           <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span><span style="color:#FF731D;background-color: black;">&nbsp;target</span><span style="color:greenyellow;background-color: black;">="_blank"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                           </pre>
+                           <div class="runCode">
+                               <button onclick="showCode(1)"> Run Code</button>
+                           </div>
+                               
+                        </div>
+                     <div class="outputCode">
+                        <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                        <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;"target="_blank">google.com</a>
+                     </div>
+                  </div>
+             </div>
+         </div>
+      </section>
+      <section class="Explaination">
+        <div class="section3Container">
+               <div class="section3-left">
+                 <h1>Working of Hyperlinks</h1>
+                 <p>
+                    A remarkable interaction takes place between the browser and the server when a user clicks a hyperlink:
+                 </p>
+                 <div class="liContainer">
+                    <ol>
+                      <li>
+                        <span style="font-weight: bold;color:#3E4E88;">User Click Action</span>: The user clicks on hyperText or a button which is embedded with hyperlink.
+                      </li>
+                      <li>
+                          <span style="font-weight: bold;color:#3E4E88;">Browser Indentification</span>: The Browser indentifies the user acrtion and computes the anchor tag which was clicked.
+                      </li>
+                      <li>
+                          <span style="font-weight: bold;color:#3E4E88;">HTTP Request</span>: A request is made to the destination server where the embedded URL is targeting by the Browser.</li>
+                     <li>
+                        <span style="font-weight: bold;color:#3E4E88;">Server Reaction</span>: The HTTP request is received and handled by the web server. The server gets the requested data based on the kind of resource (HTML page, picture, video, etc.).
+                     </li>
+                     <li>
+                        <span style="font-weight: bold;color:#3E4E88;">Response Data</span>: The Server understands the requested data and sends the relevant appropriate response back to the browser.</li>
+                     <li>
+                        <span style="font-weight: bold;color:#3E4E88;">Browser Render Process</span>: The Browser receives the reponse by the server and renders the page.</li>
+                     
+                        </ol>
+                  </div>
+               </div>
+               <div class="section3-right">
+                 <img src="./images/server.png" style="width: 90%" alt="Client-Server">
+               </div>
+            </div>
+           
+
+      </section>
+      <section class="useCases">
+            <div class="section4Container">
+                <h1>Hyperlinks usecases in real-world</h1>
+                <div class="useCasesContainer">
+                    <div class="useCase">
+                        <div class="left">
+                            <p><span style="color:#FF731D;font-weight: bold;">Internal Web Page scroll: </span> Hyperlink is useful for scrolling to any part of the webpage. They are essential to the structure and navigation of websites because they let visitors view the whole range of material that a given domain has to offer. In the given example, It will scroll the webpage to a section where the <span style="color:#4D4C7D;font-weight: bold;;">id: <span style="color:#F99417;font-weight: bold;;">About</span> section.</p>
+                        </div>
+                        <div class="right">
+                            <div class="code">
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="#About"</span>&gt;</span><span style="color:white;background-color: black;">About</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                </pre>
+                                <div class="runCode">
+                                    <button onclick="showCode(2)">Run Code</button>
+                                </div>
+                                    
+                             </div>
+                             <div class="outputCode">
+                                <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                                <a href="#About" style="color:#3e54ac;font-size:1.3rem;">About</a>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="useCase">
+                        <div class="left">
+                            <p><span style="color:#FF731D;font-weight: bold;">Email Links: </span>Clicking these links initiates the user's default email client with a pre-populated email address or subject line, facilitating communication.</p>
+                        </div>
+                        <div class="right">
+                            <div class="code">
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="mailto:udaymithra222@gmail.com"</span>&gt;</span><span style="color:white;background-color: black;">Connect Me</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                </pre>
+                                <div class="runCode">
+                                    <button onclick="showCode(3)">Run Code</button>
+                                </div>
+                                <div class="outputCode">
+                                    <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                                    <a href="mailto:udaymithra222@gmail.com" style="color: black;
+                                    
+                                    ">Connect Me</a>
+                                 </div>
+                                    
+                             </div>
+                        </div>
+                    </div>
+                    <div class="useCase">
+                        <div class="left">
+                            <p><span style="color:#FF731D;font-weight: bold;">External Links: </span>The External links are used to navigate to external pages which are linked. In the given example, the hypertext will navigate to <span style="color:#424769;font-weight: bold;;">google.com</span>.</p>
+                        </div>
+                        <div class="right">
+                            <div class="code">
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                </pre>
+                                <div class="runCode">
+                                    <button onclick="showCode(4)">Run Code</button>
+                                </div>
+                                    
+                             </div>
+                             <div class="outputCode">
+                                <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                                <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;">google.com</a>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="useCase">
+                        <div class="left">
+                            <p><span style="color:#FF731D;font-weight: bold;">Downloadable File: </span>The hyperlinks are also used for downloading files which are hosted on the server.</div>
+                        <div class="right">
+                            <div class="code">
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="path/myfile.pdf"</span> <span style="color:#FF731D;background-color: black;">download</span><span style="color:greenyellow;background-color: black;">="filename.pdf"</span>&gt;</span><span style="color:white;background-color: black;">DownloadFile.pdf</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                </pre>
+                                <div class="runCode">
+                                    <button onclick="showCode(5)">Run Code</button>
+                                </div>
+                                <div class="outputCode">
+                                    <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                                    <a href="path/myfile.pdf" download="filename.pdf">
+                                        DownloadFile.pdf
+                                        </a>
+                                 </div>
+                                    
+                             </div>
+                        </div>
+                    </div>
+                    <div class="useCase">
+                        <div class="left">
+                            <p><span style="color:#FF731D;font-weight: bold;">Pop Ups: </span>The hyperlinks are also used for alerts.</div>
+                        <div class="right">
+                            <div class="code">
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="#"</span> <span style="color:#FF731D;background-color: black;">id</span><span style="color:greenyellow;background-color: black;">="alertPop"</span>&gt;</span><span style="color:white;background-color: black;">PopUp</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                </pre>
+                                <div class="runCode">
+                                    <button onclick="alert('PopUp')">Run Code</button>
+                                </div>
+                                    
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      </section>
+      <section id="About" class="Author" style="padding-top:30px;">
+                 <h1 style="text-align:center;">Author</h1>
+
+                 <div class="authorContainer">
+                    <div class="left">
+                        <div class="profilePic">
+                            <img src="./Images/ProfileNB.png" alt="Udaymitra">
+                        </div>
+                        <div class="socialIcons">
+                             <a href="https://www.linkedin.com/in/udaymithra-kalla-071170191/" target="_blank"><img src="Images/linkedIn.svg" alt="Connect me on LinkedIn"></a>
+                             <a href="https://www.instagram.com/udaymithra_kalla?igsh=MXh6OHYwamxrYjllMQ==" target="_blank"><img src="Images/insta.svg" alt="Connect me on Instagram"></a>
+                             <a href="mailto:udaymithra222@gmail.com"><img src="Images/mail..svg" alt="Mail Me"></a>
+                        </div>
+                        
+                    </div>
+                    <div class="right">
+                        <h2 style="font-size:30px">Hi There! I'm</h2>
+                        <h1 style="font-size:50px" >Udaymitra Kalla</h1>
+                        <span class="autoType"></span><br>
+                        <br><br>
+                        <button><a href="mailto:udaymithra222@gmail.com" style="color: #ecf2ff;
+                            font-size: 20px;
+                            font-weight: 700;
+                            background-color: transparent;
+                            text-decoration: none;">Connect</a></button>
+                    </div>
+                 </div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  </body>
+</html>
