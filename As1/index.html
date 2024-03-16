@@ -184,16 +184,46 @@
         font-size: 1.2rem;
         
       }
-      .authorContainer .right button{
+      .authorContainer .right button:nth-child(1){
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #586f94), color-stop(100%, #C9D7DD));
-    border: 3px solid #000;
-    border-radius: 10px;
-    height: 50px;
-    transition: all .5s ease-in-out;
-    transition: all 2s ease;
-    width: 300px;
+        border: 3px solid #000;
+        border-radius: 10px;
+        height: 50px;
+        transition: all 2s ease;
+        width: 200px;
+        cursor: pointer;
       }
+       .resumeButton{
+        background: #C9D7DD;
+        border: 3px solid #000;
+        border-radius: 10px;
+        height: 50px;
+    
+        transition: all 2s ease;
+        width: 200px;
+        cursor: pointer;
+        
+      }
+      .resumeButton a{
+        color:black !important;
+        
+      }
+     .resumeButton:hover{
 
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #586f94), color-stop(100%, #C9D7DD));
+        border: 3px solid #000;
+        transition: all 2s ease;
+        color:whitesmoke !important;
+      
+     }
+     .buttonContainer{
+
+      display: flex;
+      
+      align-items:center;
+      gap: 20px;
+      flex-wrap: wrap;
+     }
 
       /* mobile View */
       @media (max-width:1000px) {
@@ -202,6 +232,12 @@
       }
      .section1-right, .section2-right, .section3-right{
         width:100%;
+      }
+      .buttonContainer{
+        justify-content: center;
+      }
+      .authorName{
+        font-size: 25px !important;
       }
    pre{
     overflow: scroll;
@@ -224,20 +260,23 @@
         padding-left: 0px;
         margin: 0px auto;
       }
-      .authorContainer .right button{
-        width:fit-content;
-        padding 
-        :10px 20px;
-      }
+      
       }
     </style>
   </head>
   <body>
+    <!--   Body Container --> 
     <div class="container">
+
+      <!--Starts ::Navigation Bar Starts-->
       <nav class="navBar">
         <h1>Hyperlinks Magic</h1>
       </nav>
+      <!-- Ends :: Navigation Bar ends-->
+
+       <!-- Starts :: Histroy Container-->
       <section class="historyContainer">
+       
         <div class="section1Container">
           <div class="section1-left">
             <h1>History of Web</h1>
@@ -272,6 +311,9 @@
           </div>
         </div>
       </section>
+      <!--Ends :: Histroy Section-->
+
+      <!-- Starts :: Implementation Section-->
       <section class="implementationContainer">
          <div class="section2Container">
              <div class="section2-left">
@@ -307,10 +349,12 @@
               </ul>
             </div>
              </div>
+             <!-- Starts :: Examples -->
              <div class="section2-right">
                  <h1>Examples</h1>
                   <div class="codeContainer">
                      <p>A hyperlink with plain text.</p>
+                     <!--Run Code UI Feature-->
                      <div class="code">
                         <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                         </pre>
@@ -319,12 +363,14 @@
                         </div>
                             
                      </div>
+                     <!--Output Code-->
                      <div class="outputCode">
                         <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
                         <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;">google.com</a>
                      </div>
                      <div class="codeContainer">
                         <p>A hyperlink with target attribute which navigates to a new tab.</p>
+                         <!--Run Code UI Feature-->
                         <div class="code">
                            <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span><span style="color:#FF731D;background-color: black;">&nbsp;target</span><span style="color:greenyellow;background-color: black;">="_blank"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                            </pre>
@@ -333,14 +379,18 @@
                            </div>
                                
                         </div>
-                     <div class="outputCode">
-                        <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
-                        <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;"target="_blank">google.com</a>
-                     </div>
+                         <!--Output Code-->
+                        <div class="outputCode">
+                          <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
+                          <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;"target="_blank">google.com</a>
+                       </div>
                   </div>
              </div>
          </div>
+         <!-- Ends :: Examples ends-->
       </section>
+      <!-- Ends :: Implementation section -->
+      <!--Starts :: Explaination Section-->
       <section class="Explaination">
         <div class="section3Container">
                <div class="section3-left">
@@ -376,15 +426,20 @@
            
 
       </section>
+      <!--Ends :: Explaination Ends-->
+      <!-- Starts :: Use Cases Section-->
       <section class="useCases">
             <div class="section4Container">
                 <h1>Hyperlinks usecases in real-world</h1>
+                <!--Start :: Use Cases Begin-->
                 <div class="useCasesContainer">
+                  
                     <div class="useCase">
                         <div class="left">
                             <p><span style="color:#FF731D;font-weight: bold;">Internal Web Page scroll: </span> Hyperlink is useful for scrolling to any part of the webpage. They are essential to the structure and navigation of websites because they let visitors view the whole range of material that a given domain has to offer. In the given example, It will scroll the webpage to a section where the <span style="color:#4D4C7D;font-weight: bold;;">id: <span style="color:#F99417;font-weight: bold;;">About</span> section.</p>
                         </div>
                         <div class="right">
+                          <!--Run Code UI Feature-->
                             <div class="code">
                                 <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="#About"</span>&gt;</span><span style="color:white;background-color: black;">About</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                                 </pre>
@@ -393,6 +448,7 @@
                                 </div>
                                     
                              </div>
+                             <!--Output Code-->
                              <div class="outputCode">
                                 <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
                                 <a href="#About" style="color:#3e54ac;font-size:1.3rem;">About</a>
@@ -404,12 +460,14 @@
                             <p><span style="color:#FF731D;font-weight: bold;">Email Links: </span>Clicking these links initiates the user's default email client with a pre-populated email address or subject line, facilitating communication.</p>
                         </div>
                         <div class="right">
+                          <!--Run Code UI Feature-->
                             <div class="code">
                                 <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="mailto:udaymithra222@gmail.com"</span>&gt;</span><span style="color:white;background-color: black;">Connect Me</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                                 </pre>
                                 <div class="runCode">
                                     <button onclick="showCode(3)">Run Code</button>
                                 </div>
+                                <!--Output Code-->
                                 <div class="outputCode">
                                     <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
                                     <a href="mailto:udaymithra222@gmail.com" style="color: black;
@@ -425,6 +483,7 @@
                             <p><span style="color:#FF731D;font-weight: bold;">External Links: </span>The External links are used to navigate to external pages which are linked. In the given example, the hypertext will navigate to <span style="color:#424769;font-weight: bold;;">google.com</span>.</p>
                         </div>
                         <div class="right">
+                          <!--Run Code UI Feature-->
                             <div class="code">
                                 <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="www.google.com"</span>&gt;</span><span style="color:white;background-color: black;">google.com</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                                 </pre>
@@ -433,6 +492,7 @@
                                 </div>
                                     
                              </div>
+                               <!--Output Code-->
                              <div class="outputCode">
                                 <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
                                 <a href="https://www.google.com" style="color:#3e54ac;font-size:1.3rem;">google.com</a>
@@ -443,16 +503,18 @@
                         <div class="left">
                             <p><span style="color:#FF731D;font-weight: bold;">Downloadable File: </span>The hyperlinks are also used for downloading files which are hosted on the server.</div>
                         <div class="right">
+                          <!--Run Code UI Feature-->
                             <div class="code">
-                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="path/myfile.pdf"</span> <span style="color:#FF731D;background-color: black;">download</span><span style="color:greenyellow;background-color: black;">="filename.pdf"</span>&gt;</span><span style="color:white;background-color: black;">DownloadFile.pdf</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
+                                <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="path/Download.txt"</span> <span style="color:#FF731D;background-color: black;">download</span><span style="color:greenyellow;background-color: black;">="filename.txt"</span>&gt;</span><span style="color:white;background-color: black;">DownloadFile.txt</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                                 </pre>
                                 <div class="runCode">
                                     <button onclick="showCode(5)">Run Code</button>
                                 </div>
-                                <div class="outputCode">
+                                <!--Output Code-->
+                                <div class="outputCode">  
                                     <p style="color:#FF731D;font-weight: bold;margin:5px 0px;">Output:</p>
-                                    <a href="path/myfile.pdf" download="filename.pdf">
-                                        DownloadFile.pdf
+                                    <a href="./Downlad.txt" download="Downlad.txt">
+                                        DownloadFile.txt
                                         </a>
                                  </div>
                                     
@@ -463,6 +525,7 @@
                         <div class="left">
                             <p><span style="color:#FF731D;font-weight: bold;">Pop Ups: </span>The hyperlinks are also used for alerts.</div>
                         <div class="right">
+                          <!--Run Code UI Feature-->
                             <div class="code">
                                 <pre><span style="color:#A0E9FF;background-color: black;;">&lt;a&nbsp;<span style="color:#FF731D;background-color: black;">href</span><span style="color:greenyellow;background-color: black;">="#"</span> <span style="color:#FF731D;background-color: black;">id</span><span style="color:greenyellow;background-color: black;">="alertPop"</span>&gt;</span><span style="color:white;background-color: black;">PopUp</span><span style="color:#A0E9FF;background-color: black;;">&lt;/a&gt;</span>
                                 </pre>
@@ -474,9 +537,11 @@
                         </div>
                     </div>
                 </div>
+                <!--Ends:: Use Cases -->
             </div>
 
       </section>
+      <!-- Starts ::  About Author Section-->
       <section id="About" class="Author" style="padding-top:30px;">
                  <h1 style="text-align:center;">Author</h1>
 
@@ -494,17 +559,28 @@
                     </div>
                     <div class="right">
                         <h2 style="font-size:30px">Hi There! I'm</h2>
-                        <h1 style="font-size:50px" >Udaymitra Kalla</h1>
+                        <h1 style="font-size:50px" class="authorName" >Udaymitra Kalla</h1>
                         <span class="autoType"></span><br>
                         <br><br>
+                        <div class="buttonContainer">
+                          
                         <button><a href="mailto:udaymithra222@gmail.com" style="color: #ecf2ff;
-                            font-size: 20px;
-                            font-weight: 700;
-                            background-color: transparent;
-                            text-decoration: none;">Connect</a></button>
+                          font-size: 20px;
+                          font-weight: 700;
+                          background-color: transparent;
+                          text-decoration: none;">Connect</a></button>
+                          
+                        <button class="resumeButton"><a href="./Udaymithra_Kalla_Resume.pdf" target="_blank" style="color: #ecf2ff;
+                          font-size: 20px;
+                          font-weight: 700;
+                          background-color: transparent;
+                          color:inherit;
+                          text-decoration: none;">View Resume</a></button>
+                        </div>
                     </div>
                  </div>
       </section>
+      <!--Ends :: About Author Section-->
     </div>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   </body>
