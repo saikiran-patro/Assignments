@@ -1,0 +1,244 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ecf2ff;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0px;
+  }
+  .outputCode{
+    display: none;
+    transition: all 1s linear;
+  }
+  .section1Container , .section3Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .section2Container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .section4Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .section1-left,.section2-left,.section3-left {
+    width: 50%;
+  }
+ .section1-right, .section2-right, .section3-right{
+    width:40%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #586f94;
+    font-weight: bold;
+    font-family: "Concert One", cursive;
+  }
+  p ,li{
+    font-size: 1.5rem;
+    line-height: 26px;
+    text-align: justify;
+  }
+  .navBar {
+    display: flex;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e54ac;
+  }
+
+  .navBar h1 {
+    font-size: 3rem;
+    color: #ecf2ff;
+    margin: 0px;
+    background-color: inherit;
+  }
+
+  .code{
+    background:black;
+    border-radius: 10px;;
+  }
+  pre{
+    background-color:black;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 0px;
+    color:white;
+    display: flex;
+  
+    align-items: center;
+  }
+  .runCode{
+    display: flex;
+background: inherit;
+padding: 10px;
+border-radius: inherit;
+justify-content: flex-end;
+  }
+  .runCode button{
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: #5F9DF7;
+    border-radius: 10px;
+    cursor:pointer;
+  }
+  li{
+    font-size:1.5rem;
+    line-height: 26px;
+    margin-bottom:5px;
+  }
+
+  .useCasesContainer{
+    width:100%;
+  }
+  .useCase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+  }
+  .useCase .left{
+    width:50%;
+  }
+  .useCase .right{
+    width:40%;
+  }
+  .profilePic{
+    background-color: #C9D7DD;
+    border-radius: 100%;
+    height: 300px;
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+  .profilePic img{
+    height: 82%;
+    object-fit: cover;
+    width: 82%;
+    border-radius: 100%;
+    background: #C9D7DD;
+  }
+  .authorContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  .authorContainer .left{
+    width: 50%;
+  }
+  .authorContainer .right{
+    width: 50%;
+    padding-left: 15%;
+  }
+  .socialIcons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .socialIcons img{
+    width: 50px;
+  }
+  .autoType{
+    color: #395b64;
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+  }
+  .authorContainer .right button:nth-child(1){
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #586f94), color-stop(100%, #C9D7DD));
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 50px;
+    transition: all 2s ease;
+    width: 200px;
+    cursor: pointer;
+  }
+   .resumeButton{
+    background: #C9D7DD;
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 50px;
+
+    transition: all 2s ease;
+    width: 200px;
+    cursor: pointer;
+    
+  }
+  .resumeButton a{
+    color:black !important;
+    
+  }
+ .resumeButton:hover{
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #586f94), color-stop(100%, #C9D7DD));
+    border: 3px solid #000;
+    transition: all 2s ease;
+    color:whitesmoke !important;
+  
+ }
+ .buttonContainer{
+
+  display: flex;
+  
+  align-items:center;
+  gap: 20px;
+  flex-wrap: wrap;
+ }
+
+  /* mobile View */
+  @media (max-width:1000px) {
+    .section1-left,.section2-left,.section3-left {
+    width: 100%;
+  }
+ .section1-right, .section2-right, .section3-right{
+    width:100%;
+  }
+  .buttonContainer{
+    justify-content: center;
+  }
+  .authorName{
+    font-size: 25px !important;
+  }
+pre{
+overflow: scroll;
+}
+  .useCase .left{
+    width:100%;
+
+  }
+  .authorContainer{
+    flex-wrap: wrap;
+  }
+  .useCase .right{
+    width:100%; 
+  }
+  .authorContainer .left{
+    width:100%;
+  }
+  .authorContainer .right{
+
+    padding-left: 0px;
+    margin: 0px auto;
+  }
+  
+  }
